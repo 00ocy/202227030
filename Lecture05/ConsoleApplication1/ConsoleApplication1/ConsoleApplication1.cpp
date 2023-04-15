@@ -66,6 +66,21 @@ int print_game_screen(int stage_width, int stage_height)
         std::cout << "*";
     }
 
+    char** snake = NULL;
+
+    snake = (char**)malloc(sizeof(char*) * stage_width);
+    for (char i = 0; i < 10; i++) {
+        snake[i] = (char*)malloc(sizeof(char) * stage_height);
+    }
+
+    snake[5][5] = 'o';
+
+
+    for (int i = 0; i < stage_width; i++) {
+        free(snake[i]);
+    }
+    free(snake);
+
     gotoxy(stage_width ,stage_height);
     
     return 0;
@@ -82,6 +97,7 @@ int print_introduction_screen()
     std::cout << "******************************************" << std::endl;
     std::cout << std::endl;
     std::cout << "타이틀화면으로 돌아갈까요? (Y/N)" << std::endl;
+
 
     return 0;
 }
@@ -142,6 +158,7 @@ int main()
     goto2:  switch (key_input)
             {
             case 'y':
+                system("cls");
                 game_state = 0;
                 break;
             case 'n':
