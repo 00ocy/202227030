@@ -3,60 +3,60 @@
 
 #include <string>
 
-
-class Object
-{
+class Object {
 private:
     int posX;
     int posY;
+
 public:
-    Object(int x, int y) :  posX(x), posY(y) {}
+    Object(int x, int y) : posX(x), posY(y) {}
     virtual ~Object() {}
 
-    virtual void Start();
-    virtual void Update();
-    virtual void Render();
+    virtual void Start() {}
+    virtual void Update() {}
+    virtual void Render() {}
 
-    virtual int GetX();
-    virtual int GetY();
-    virtual std::string GetShape();
+    int GetX() { return posX; }
+    int GetY() { return posY; }
+    virtual std::string GetShape() { return "a"; }
 };
 
-class Triangle : public Object
-{
-private:
-    int posX;
-    int posY;
-
+class Circle : public Object {
 public:
-    Triangle(int x, int y) : Object(x, y), posX(x), posY(y) {}
-     ~Triangle() {}
+    Circle(int x, int y) : Object(x, y) {}
 
-    void Start() override;
-    void Update() override;
-    void Render() override;
-    int GetX() ;
-    int GetY() ;
-    std::string GetShape();
+    std::string GetShape() override
+    {
+        return "б▄";
+    }
+
+
 };
 
-class Square : public Object
-{
-private:
-    int posX;
-    int posY;
-
+class Triangle : public Object {
 public:
-    Square(int x, int y) : Object(x, y), posX(x), posY(y) {}
-     ~Square() {}
+    Triangle(int x, int y) : Object(x, y) {}
 
-    void Start() override;
-    void Update() override;
-    void Render() override;
-    int GetX() ;
-    int GetY() ;
-    std::string GetShape() ;
+    std::string GetShape() override 
+    {
+        return "бу";
+    }
+    
+
 };
+
+class Square : public Object {
+public:
+    Square(int x, int y) : Object(x, y) {}
+
+    std::string GetShape() override
+    {
+        return "бс";
+    }
+
+
+};
+
 
 
 #endif // OBJECT_H

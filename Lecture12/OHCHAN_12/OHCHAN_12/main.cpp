@@ -1,10 +1,5 @@
-﻿#include <iostream>
-#include <vector>
-#include <chrono>
-#include <thread>
-#include "GameLoop.h"
-#include "Object.h"
-#include "Scene.h"
+﻿#include "GameLoop.h"
+
 
 int main()
 {

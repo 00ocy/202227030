@@ -18,13 +18,7 @@ namespace OHCHAN_12
         Scene(int screenWidth, int screenHeight);       
         ~Scene();
 
-        void MoveCursor(short x, short y);
-        void SetCursorState(bool visible);
-        void DrawString(std::string s);
-        void Clear();
-        void Start();
-        void Update();
-        void AddObject(Object* object);
+        void Clear();        
         void Addbuf(int x, int y, std::string info);
         void SceneRender();
 

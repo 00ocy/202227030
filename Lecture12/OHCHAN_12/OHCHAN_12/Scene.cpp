@@ -1,26 +1,12 @@
-#include "Scene.h"
-#include <Windows.h>
-#include <string>
 #include <iostream>
+#include <Windows.h>
 #include <chrono>
 #include <thread>
+#include "Scene.h"
 
 namespace OHCHAN_12
 {
-    void Scene::MoveCursor(short x, short y)
-    {
-        COORD position = { x , y };
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
-    }
-
-    void Scene::SetCursorState(bool visible)
-    {
-        CONSOLE_CURSOR_INFO consoleCursorInfo;
-        consoleCursorInfo.bVisible = visible;
-        consoleCursorInfo.dwSize = 1;
-        SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &consoleCursorInfo);
-    }
-
+    
     Scene::Scene(int screenWidth, int screenHeight)
         : width(screenWidth), height(screenHeight)
     {
@@ -50,11 +36,6 @@ namespace OHCHAN_12
         }
     }
 
-    void Scene::AddObject(Object* object)
-    {
-        // 오브젝트를 벡터에 추가합니다.
-        objects.push_back(object);
-    }
 
     void Scene::Addbuf(int x, int y, std::string info)
     {
@@ -69,12 +50,6 @@ namespace OHCHAN_12
         }
     }
  
-    void Scene::DrawString(std::string s)
-    {
-        std::cout << s;
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    }
-
     void Scene::SceneRender()
     {
         // 화면에 버퍼 내용 출력

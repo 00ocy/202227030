@@ -2,10 +2,8 @@
 #include <iostream>
 #include <conio.h>
 #include <Windows.h>
-#include <vector>
 #include <chrono>
 #include <thread>
-#include "Object.h"
 #include "Scene.h"
 
 
@@ -110,7 +108,7 @@ namespace OHCHAN_12
 				y = std::stoi(yString);
 				if (selectedShape == 1)
 				{
-					objects.push_back(new Object(x, y));
+					objects.push_back(new Circle(x, y));
 				}
 				else if(selectedShape == 2)
 				{
