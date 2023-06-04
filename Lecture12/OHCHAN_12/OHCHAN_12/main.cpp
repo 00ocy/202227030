@@ -3,8 +3,10 @@
 
 int main()
 {
-    OHCHAN_12::GameLoop gameLoop;
-    gameLoop.Run();
+
+    //OHCHAN_12::GameLoop gameLoop;
+   
+   // gameLoop.Run();
     
     return 0;
 }

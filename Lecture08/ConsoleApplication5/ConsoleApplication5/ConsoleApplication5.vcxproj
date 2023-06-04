@@ -128,6 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication5.cpp" />
+    <ClCompile Include="FileName.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="object.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MGameLoop.hpp" />

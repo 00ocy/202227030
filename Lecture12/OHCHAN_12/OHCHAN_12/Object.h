@@ -2,6 +2,8 @@
 #define OBJECT_H
 
 #include <string>
+namespace OHCHAN_12
+{
 
 class Object {
 private:
@@ -19,6 +21,19 @@ public:
     int GetX() { return posX; }
     int GetY() { return posY; }
     virtual std::string GetShape() { return "a"; }
+};
+
+class Snake {
+public:
+    Snake(int startX, int startY) : x(startX), y(startY) {}
+    int getX() const { return x; }
+    int getY() const { return y; }
+    void setX(int newX) { x = newX; }
+    void setY(int newY) { y = newY; }
+
+private:
+    int x;
+    int y;
 };
 
 class Circle : public Object {
@@ -58,5 +73,6 @@ public:
 };
 
 
+}
 
 #endif // OBJECT_H
