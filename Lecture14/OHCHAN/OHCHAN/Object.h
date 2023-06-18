@@ -1,13 +1,10 @@
-#include <stdbool.h>
-#ifndef OBJECT_H
-#define OBJECT_H
-#define NUM_FRUITS 100
-#define NUM_WALLS 1000
+#pragma once
 
+#include <stdbool.h>
 
 
 struct Wall* walls;
-struct Fruit* fruits;
+struct Assignment* assignment;
 
 bool isWall;
 bool isFruit;
@@ -23,19 +20,18 @@ struct Wall {
     char shape;
 }; 
 
-struct Fruit {
+struct Assignment {
     int x;
     int y;
     char shape;
 
 };
 
-
+//
 //void destroyWalls() {
-//    free(walls);
+//  free(walls);
 //}
-
+//
 //void destroyFruits() {
 //    free(fruits);
 //}
-#endif
